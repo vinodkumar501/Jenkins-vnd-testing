@@ -22,7 +22,7 @@ pipeline {
 		
           steps {
 				
-		               echo ‘ testing an application . .’
+		echo ‘ testing an application . .’
 			
              }
 		

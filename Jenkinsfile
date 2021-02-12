@@ -12,7 +12,7 @@ pipeline {
 			
               //sh ‘npm build’
 			
-               echo ‘ building an application . .’
+               echo ‘ building an application ’
 			
              }
 		
@@ -22,7 +22,7 @@ pipeline {
 		
           steps {
 				
-		echo ‘ testing an application . .’
+		echo ‘ testing an application ’
 			
              }
 		
@@ -32,7 +32,7 @@ pipeline {
 		
           steps {
 						
-               echo ‘ deploying an application . .’
+               echo ‘ deploying an application ’
 			
              }
 		

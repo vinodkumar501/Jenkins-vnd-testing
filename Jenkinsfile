@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage(build) {
       steps {
-        sh echo building an apps"
+        "echo building apps"
         }
     }
     stage(test) {
@@ -15,28 +15,11 @@ pipeline {
       steps {
         sh "echo deploying apps"
         }
-    }  
+    }    
   }
-  
   post {
-  
-    always {
- 
-       echo 'One way or another, I have finished'
-       deleteDir() /* clean up our workspace */
-       }
-       success {
-           echo 'I succeeded!'
-       }
-       unstable {
-           echo 'I unstable!'
-       }
-       failure {
-           echo 'I failed!'
-       }
-       changed {
-           echo 'Things were different before.!'
-       }
- }
- 
+    success {    
+      mail to :vinoddevops501@gmail.com, subject: "the pipeline success"
+     }
+  }  
 }

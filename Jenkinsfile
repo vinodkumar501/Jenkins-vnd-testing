@@ -6,7 +6,8 @@ pipeline {
     stage (deployment) {
       steps {
         sh "echo version is ${NEW_VERSION}"
-     }
-   }
- }
+        }
+      }
+    }
+  }
 }

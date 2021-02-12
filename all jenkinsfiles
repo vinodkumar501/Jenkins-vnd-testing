@@ -237,3 +237,45 @@ CHANGE_URL
 For a multibranch project corresponding to some kind of change request, this will be set to the change URL, if supported; else unset.
 
 
+
+======================================tools used in jenkins========================================
+tools attribute for build tools
+
+access build tools for your project
+
+
+pipeline {
+  agent any 
+  tools {              // tools we have to mention what tools we use over Jenkinsfile
+    maven  'maven'         //name of maven installation in jenkins you have to provide 
+  stages {
+    stage (deploy) {
+      steps {
+        sh "echo run app"
+        sh "mvn install"
+      }
+    }
+  }
+ }
+}
+
+
+https://www.youtube.com/watch?v=7KCS70sCoK0&t=407s
+
+
+pipeline {
+  agent any  
+  tools {
+    gradle 'gradle'
+  }
+  stages {
+    stage (deploy) {
+      steps {
+        sh "echo run gradle"
+        sh './gradle -v'
+      }
+    }
+  }
+}
+
+

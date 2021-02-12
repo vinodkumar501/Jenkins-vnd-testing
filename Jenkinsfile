@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage(build) {
       steps {
-        "echo building apps"
+        //sh 'npm install'            // java based apps
+        //sh 'npm build'
+       
         }
     }
     stage(test) {
@@ -16,10 +18,5 @@ pipeline {
         sh "echo deploying apps"
         }
     }    
-  }
-  post {
-    success {    
-      mail to :vinoddevops501@gmail.com, subject: "the pipeline success"
-     }
   }  
 }

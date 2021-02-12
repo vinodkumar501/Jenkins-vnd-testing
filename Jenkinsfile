@@ -2,6 +2,7 @@ pipeline {
   agent any  
   tools {
     gradle 'gradle'
+  }
   stages {
     stage (deploy) {
       steps {

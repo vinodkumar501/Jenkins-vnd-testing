@@ -1,0 +1,23 @@
+Jenkinsfile: 1
+
+pipeline {
+  agent any
+  stages {
+    stage(build) {
+      steps {
+        sh "echo building an apps"
+        }
+    }
+    stage(test) {
+      steps {
+        sh "echo testing apps"
+        }
+    }
+    stage(deploy) {
+      steps {
+        sh "echo deploying apps"
+        }
+    }  
+  }
+}
+==================================================

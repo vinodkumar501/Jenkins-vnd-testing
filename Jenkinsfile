@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage(build) {
       steps {
-        sh "echo testing apps"
+        sh "echo installing apps"
         //sh 'npm install'            // java based apps
         //sh 'npm build'
        

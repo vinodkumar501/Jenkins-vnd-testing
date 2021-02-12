@@ -1,23 +1,10 @@
 pipeline {
-  agent any
-  stages {
-    stage(build) {
+  agent any {
+    stages {
+      stage (deployment) 
       steps {
-        sh "echo installing apps"
-        //sh 'npm install'            // java based apps
-        //sh 'npm build'
-       
-        }
+        sh "echo run appln"
+      }
     }
-    stage(test) {
-      steps {
-        sh "echo testing apps"
-        }
-    }
-    stage(deploy) {
-      steps {
-        sh "echo deploying apps"
-        }
-    }    
-  }  
+  }
 }

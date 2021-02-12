@@ -1,25 +1,47 @@
-Jenkinsfile
-
-
-Jenkinsfile:		
 
 Pipeline syntax:
 
-Declarative and scripted
+scripted pipeline and Declarative pipeline
 
-scripted pipeline
+Scripted:
+----------
 
-first syntx 	groovy scripted
+1.first syntax
+2.groovy engine
+3.advance scripting capability and high flexibility
+4.difficult to start
 
+syntax:
+===================================
 node {
+  //groovy script
+}
+===================================
 
-      //groovy
 
+Declarative pipeline:
+--------------------
+
+1.easier to get started but not powerful
+2.recent addition
+3.predefined structure
+
+This is the syntax you follow you have to fill in the /////////////
+syntax:
+===================================
+pipeline {  
+  agent any  
+  stages {   
+    stage(build) {      
+     steps { 
+          //////////////
+        }
+     }
+  }
 }
 
-
 ===================================
-Jenkinsfile: 1
+Jenkinsfile: 1 Declartive
 
 
 pipeline {  
@@ -44,7 +66,7 @@ Multibranch Pipeline
 Creates a set of Pipeline projects according to detected branches in one SCM repository.
 
 =====================================
-Jenkinsfile:2	
+Jenkinsfile:2 Declartive
  --------->
 pipeline {
   agent any
@@ -78,15 +100,15 @@ post {
 
 =======================
 post :
-	excute some logic after all the stages are executed 
+ excute some logic after all the stages are executed 
 conditions:
  - always
  - success
  - failure
  
  =====================================
- --------->
- Jenkinsfile:		3											
+
+Jenkinsfile: 3 Declartive											
 
 pipeline {
   agent any

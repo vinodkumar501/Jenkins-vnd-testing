@@ -1,10 +1,8 @@
 pipeline {
   agent any 
   stages {
-    stage (build) {
-      steps {
-        sh "echo building an application" 
-        }
-     }
-   }
+    stage (deployment) {
+      sh "echo name is vinod"
+    }
+  }
 }

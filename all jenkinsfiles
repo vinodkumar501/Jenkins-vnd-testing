@@ -1,4 +1,92 @@
+Jenkinsfile
+
+
+Jenkinsfile:		
+
+Pipeline syntax:
+
+Declarative and scripted
+
+scripted pipeline
+
+first syntx 	groovy scripted
+
+node {
+
+      //groovy
+
+}
+
+
+===================================
 Jenkinsfile: 1
+
+
+pipeline {  
+  agent any  
+  stages {   
+    stage(build) {      
+     steps {       
+       sh "echo builing apps"
+        }
+     }
+  }
+}
+																								
+======================================
+pipeline 	must be top level
+agent	Where to execute
+stages	Where the work happens
+  stage and steps
+ 
+===========================
+Multibranch Pipeline
+Creates a set of Pipeline projects according to detected branches in one SCM repository.
+
+=====================================
+Jenkinsfile:2	
+ --------->
+pipeline {
+  agent any
+  stages {
+    stage(build) {
+      steps {
+        sh "echo building apps"
+        }
+    }
+    stage(test) {
+      steps {
+        sh "echo testing apps"
+        }
+    }
+    stage(deploy) {
+      steps {
+        sh "echo deploying apps"
+        }
+    }    
+  }  
+}																								
+==========================
+post {
+  always {
+    // 
+ }
+  failure {
+ }
+}
+}
+
+=======================
+post :
+	excute some logic after all the stages are executed 
+conditions:
+ - always
+ - success
+ - failure
+ 
+ =====================================
+ --------->
+ Jenkinsfile:		3											
 
 pipeline {
   agent any
@@ -19,21 +107,26 @@ pipeline {
         }
     }  
   }
-}
-==================================================
-
-Jenkinsfile: 2
-
-pipeline {  
-  agent any  
-  stages {   
-    stage(build) {      
-     steps {       
-       sh "echo builing apps"
-        }
-     }
-  }
   
+  post {
   
-==================================================
+    always {
+ 
+       echo 'One way or another, I have finished'
+       deleteDir() /* clean up our workspace */
+       }
+       success {
+           echo 'I succeeded!'
+       }
+       unstable {
+           echo 'I unstable!'
+       }
+       failure {
+           echo 'I failed!'
+       }
+       changed {
+           echo 'Things were different before.!'
+       }
+ }
+ 
 }

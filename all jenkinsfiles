@@ -32,7 +32,7 @@ syntax:
 pipeline {  
   agent any  
   stages {   
-    stage(build) {      
+    stage(checkout) {      
      steps { 
           //////////////
         }
@@ -40,6 +40,34 @@ pipeline {
   }
 }
 
+
+Here 
+"pipeline" -> must be top level
+"agent" -> where to execute
+"stages" -> where to work happens
+  
+  eg:
+  stages {   
+    stage(build) {      
+     steps { 
+          //////////////
+        }
+     }
+  }
+
+------->
+scripted 
+
+node {
+  //groovy script
+}
+
+--> scripted pipeline
+node { 
+
+-->equal to in declarative pipeline
+pipeline {  
+  agent any   
 ===================================
 Jenkinsfile: 1 Declartive
 

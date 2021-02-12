@@ -1,13 +1,12 @@
 pipeline {
   agent any  
   tools {
-    maven 'mvn'
-    graddle
+    gradle 'gradle'
   stages {
     stage (deploy) {
       steps {
-        sh "echo run app"
-        sh "mvn install"
+        sh "echo run gradle"
+        sh './gradle -v'
       }
     }
   }

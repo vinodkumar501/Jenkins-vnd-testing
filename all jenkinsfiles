@@ -237,24 +237,3 @@ CHANGE_URL
 For a multibranch project corresponding to some kind of change request, this will be set to the change URL, if supported; else unset.
 
 
-etc
-
-in addition to the predefined environment variables provide in the jenkins ,we need to provide user defained varibles as well
-
-syntax
-
-pipeline {
-  agent any {
-  environment {
-    NEW_VERSION = '1.3.0'
-      }
-  stages {
-    stage (build)
-      steps {
-        sh "echo building an application" 
-        sh "building an application version ${NEW_VERSION}"
-}
-  }
-  
-  }
- }

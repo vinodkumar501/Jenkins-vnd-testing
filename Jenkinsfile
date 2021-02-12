@@ -1,12 +1,9 @@
 pipeline {
-  agent any 
-  environment {
-    NEW_VERSION = '1.3.0'
+  node any 
   stages {
-    stage (deployment) {
+    stage (deploy) {
       steps {
-        sh "echo version is ${NEW_VERSION}"
-        }
+        sh "echo run app"
       }
     }
   }

@@ -1,14 +1,24 @@
-pipeline {
-  agent any  
-  tools {
-    gradle 'gradle'
-  }
-  stages {
-    stage (deploy) {
-      steps {
-        sh "echo run gradle"
-        sh './gradle -v'
-      }
+pipeline { 
+    agent any 
+    options {
+        skipStagesAfterUnstable()
     }
-  }
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'make' 
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'make check'
+                junit 'reports/**/*.xml' 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
+            }
+        }
+    }
 }

@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage("build") {
           steps {
-                retry(3) {
-                    sh 'echo "Deployment testing"
+                retry(3000) {
+                    sh 'echo "Deployment testing"'
                    }
         }
     }

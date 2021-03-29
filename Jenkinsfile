@@ -3,13 +3,9 @@ pipeline {
     stages {
         stage("build") {
           steps {
-             sh 'echo "vnd"'
-             sh '''
-               echo how ru 
-               echo am fine
-               echo "bbye"
-             '''
-          }
+                retry(3) {
+                    sh './flakey-deploy.sh'
+                   }
         }
     }
 }

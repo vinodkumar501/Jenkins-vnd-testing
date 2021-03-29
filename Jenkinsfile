@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("build") {
           steps {
-              sh ''' {
+              sh ''' 
                    'echo "tried 30 times but no luck"'
                    'ls -lah'
               '''
@@ -11,4 +11,3 @@ pipeline {
         }
     }
   }
-}

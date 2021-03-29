@@ -6,6 +6,7 @@ pipeline {
               sh '''
                    'echo "tried 30 times but no luck"'
                    'ls -lah'
+              '''
                    }
         }
     }

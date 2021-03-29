@@ -4,7 +4,7 @@ pipeline {
         stage("build") {
           steps {
                 retry(3) {
-                    sh './flakey-deploy.sh'
+                    sh 'echo "Deployment testing"
                    }
         }
     }

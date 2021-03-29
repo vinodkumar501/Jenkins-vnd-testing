@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'eho "vinod"'
+                sh 'echo "vinod"'
             }
         }
     }
